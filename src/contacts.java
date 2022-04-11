@@ -117,6 +117,28 @@ public class contacts {
             }
         }
 
+        if(view == 4){
+            System.out.println("Delete contacts by name and/or phone number.");
+            System.out.println(" Name or Number: ");
+            Scanner scanDelete = new Scanner(System.in);
+            String searched = scanDelete.nextLine();
+            Path ContactsPath = Paths.get("data", "contacts.txt");
+            List<String> items;
+            try{
+                items = Files.readAllLines(ContactsPath);
+                List<String> revisedList = new ArrayList<>();
+                for (String person : items){
+                    if (person.toLowerCase().contains(searched.toLowerCase())) {
+                        continue;
+                    }
+                    revisedList.add(person);
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+                System.out.println("Cannot erase list item.");
+            }
+        }
+
 
 
 
