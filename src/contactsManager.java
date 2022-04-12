@@ -10,8 +10,6 @@ import java.util.List;
 
 public class contactsManager {
 
-    public static List<contacts> PersonList = new ArrayList<>();
-
 //    public static int mainMenu(){
 //        System.out.println("1. View contacts");
 //        System.out.println("2. Add a new contacts");

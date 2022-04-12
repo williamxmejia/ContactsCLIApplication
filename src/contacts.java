@@ -54,6 +54,7 @@ public class contacts {
                 for(int i = 0; i < contacts.size(); i++){
                     System.out.println(contacts.get(i));
                 }
+                System.out.println("--------------");
             } catch (IOException e) {
                 e.printStackTrace();
                 System.out.println("Cannot Read " + fileName);
@@ -70,8 +71,7 @@ public class contacts {
                 String lastName = sc.next();
                 System.out.println("Phone number");
                 String phoneNumber = sc.next();
-                String phone = phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-
+                String phone = phoneNumber.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "$1-$2-$3");
                 List<String> items = Arrays.asList(firstName + " " + lastName + " | " + phone);
                 Files.write(filePath, items, StandardOpenOption.APPEND);
             } catch (IOException e) {
@@ -93,6 +93,7 @@ public class contacts {
                 for (String person : items) {
                     if (person.toLowerCase().contains(searched.toLowerCase())) {
                         System.out.println("Contact:\n" + person);
+                        System.out.println("--------------");
                     }
                 }
             } catch (IOException e) {
